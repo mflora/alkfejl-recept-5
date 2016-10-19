@@ -8,7 +8,7 @@ class RecipeController {
 
     * list(req, res) {
 
-        const categories = yield Category.all();
+        const categories = yield Category.with('recipes').fetch();  //ide lett valami írva...
 
 
         yield res.sendView('main', {
